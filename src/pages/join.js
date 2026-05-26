@@ -80,7 +80,7 @@ export default function JoinPage() {
           }}
         />
 
-        {finalUrl.length > 0 && (
+        {joinlink.length > 0 && (
           <div
             style={{
               marginTop: '10px',
