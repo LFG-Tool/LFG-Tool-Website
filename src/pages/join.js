@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import { useLocation } from '@docusaurus/router';
 
@@ -31,14 +31,22 @@ export default function JoinPage() {
   const [input, setInput] = useState('');
 
   const location = useLocation();
+
   const params = useMemo(() => {
     const search = location.search || '';
     return new URLSearchParams(search);
   }, [location.search]);
+
   const steamUrl = useMemo(() => {
     const raw = params.get('url');
     return raw ? decodeURIComponent(raw) : '';
   }, [params]);
+
+  useEffect(() => {
+    if (steamUrl && !input) {
+      setInput(steamUrl);
+    }
+  }, [steamUrl]);
 
   const joinlink = input || steamUrl;
 
