@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
+import { useLocation } from '@docusaurus/router';
 
 function CheckSteamLobby(url) {
   if (!url) return false;
@@ -29,11 +30,23 @@ function CheckSteamLobby(url) {
 export default function JoinPage() {
   const [input, setInput] = useState('');
 
-  const isValid = useMemo(() => CheckSteamLobby(input), [input]);
+  const location = useLocation();
+  const params = useMemo(() => {
+    const search = location.search || '';
+    return new URLSearchParams(search);
+  }, [location.search]);
+  const steamUrl = useMemo(() => {
+    const raw = params.get('url');
+    return raw ? decodeURIComponent(raw) : '';
+  }, [params]);
+
+  const joinlink = input || steamUrl;
+
+  const isValid = useMemo(() => CheckSteamLobby(joinlink), [joinlink]);
 
   const handleJoin = () => {
     if (!isValid) return;
-    window.location.href = input;
+    window.location.href = joinlink;
   };
 
   return (
@@ -67,7 +80,7 @@ export default function JoinPage() {
           }}
         />
 
-        {input.length > 0 && (
+        {finalUrl.length > 0 && (
           <div
             style={{
               marginTop: '10px',
@@ -75,9 +88,7 @@ export default function JoinPage() {
               color: isValid ? 'green' : 'red',
             }}
           >
-            {isValid
-              ? 'Valid Steam lobby link'
-              : 'Invalid Steam lobby link'}
+            {isValid ? 'Valid Steam lobby link' : 'Invalid Steam lobby link'}
           </div>
         )}
 
