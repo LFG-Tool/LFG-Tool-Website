@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'LFG Tool',
-  tagline: 'Managing LFG in your Discord servers.',
+  tagline: 'Manage LFG postings and temporary voice channels with a single bot built for Discord gaming communities.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -86,7 +86,8 @@ const config = {
         title: 'LFG Tool',
         logo: {
           alt: 'LFG Tool Logo',
-          src: 'img/logo.png',
+          src: 'img/logo-dark.png',
+          srcDark: 'img/logo.png',
         },
         items: [
           // {
@@ -95,6 +96,11 @@ const config = {
           //   position: 'left',
           //   label: 'Tutorial',
           // },
+          {
+            href: 'https://github.com/LFG-Tool/LFG-Tool-Website',
+            label: 'GitHub',
+            position: 'right',
+          },  
         ],
       },
       footer: {

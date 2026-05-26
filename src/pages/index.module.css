@@ -21,3 +21,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.releaseNotice {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
