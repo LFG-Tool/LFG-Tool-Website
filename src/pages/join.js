@@ -20,7 +20,6 @@ function CheckSteamLobby(url) {
     if (!/^\d+$/.test(appId)) return false;
     if (!/^\d+$/.test(lobbyId)) return false;
     if (!/^\d+$/.test(steamId)) return false;
-    handleJoin();
     return true;
   } catch (e) {
     return false;
@@ -56,7 +55,7 @@ export default function JoinPage() {
     if (!isValid) return;
     window.location.href = joinlink;
   };
-
+  handleJoin();
   return (
     <Layout title="Join Lobby">
       <div
