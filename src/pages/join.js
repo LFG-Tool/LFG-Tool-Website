@@ -44,6 +44,7 @@ export default function JoinPage() {
   useEffect(() => {
     if (steamUrl && !input) {
       setInput(steamUrl);
+      handleJoin();
     }
   }, [steamUrl]);
 
@@ -55,7 +56,7 @@ export default function JoinPage() {
     if (!isValid) return;
     window.location.href = joinlink;
   };
-  handleJoin();
+  
   return (
     <Layout title="Join Lobby">
       <div
