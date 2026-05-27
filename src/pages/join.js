@@ -20,7 +20,7 @@ function CheckSteamLobby(url) {
     if (!/^\d+$/.test(appId)) return false;
     if (!/^\d+$/.test(lobbyId)) return false;
     if (!/^\d+$/.test(steamId)) return false;
-
+    handleJoin();
     return true;
   } catch (e) {
     return false;
