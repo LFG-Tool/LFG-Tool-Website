@@ -5,25 +5,9 @@ import { useLocation } from '@docusaurus/router';
 function CheckSteamLobby(url) {
   if (!url) return false;
 
-  try {
-    const parsed = new URL(url);
-
-    if (parsed.protocol !== 'steam:') return false;
-    if (!parsed.pathname.startsWith('//joinlobby/')) return false;
-
-    const parts = parsed.pathname.split('/').filter(Boolean);
-
-    if (parts.length !== 4) return false;
-
-    const [_, appId, lobbyId, steamId] = parts;
-
-    if (!/^\d+$/.test(appId)) return false;
-    if (!/^\d+$/.test(lobbyId)) return false;
-    if (!/^\d+$/.test(steamId)) return false;
-    return true;
-  } catch (e) {
-    return false;
-  }
+  const steamLobbyRegex = /^steam:\/\/joinlobby\/(\d+)\/(\d+)\/(\d+)\/?$/;
+  
+  return steamLobbyRegex.test(url.trim());
 }
 
 export default function JoinPage() {
