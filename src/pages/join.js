@@ -1,18 +1,17 @@
 import React, { useMemo, useState, useEffect } from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { useLocation } from '@docusaurus/router';
+import styles from './join.module.css';
 
 function CheckSteamLobby(url) {
   if (!url) return false;
-
   const steamLobbyRegex = /^steam:\/\/joinlobby\/(\d+)\/(\d+)\/(\d+)\/?$/;
-  
   return steamLobbyRegex.test(url.trim());
 }
 
 export default function JoinPage() {
   const [input, setInput] = useState('');
-
   const location = useLocation();
 
   const params = useMemo(() => {
@@ -33,7 +32,6 @@ export default function JoinPage() {
   }, [steamUrl]);
 
   const joinlink = input || steamUrl;
-
   const isValid = useMemo(() => CheckSteamLobby(joinlink), [joinlink]);
 
   const handleJoin = () => {
@@ -43,43 +41,20 @@ export default function JoinPage() {
   
   return (
     <Layout title="Join Lobby">
-      <div
-        style={{
-          maxWidth: '650px',
-          margin: '80px auto',
-          padding: '20px',
-          textAlign: 'center',
-        }}
-      >
-        <h1>Join Steam Lobby</h1>
-
-        <p style={{ opacity: 0.7 }}>
-          Paste a Steam lobby link below to join.
-        </p>
+      <div className={styles.joinContainer}>
+        <h1 className={styles.title}>Join Steam Lobby</h1>
+        <p className={styles.subtitle}>Paste a Steam lobby link below to safely jump in.</p>
 
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="steam://joinlobby/..."
-          style={{
-            width: '100%',
-            padding: '12px',
-            fontSize: '14px',
-            borderRadius: '6px',
-            border: '1px solid #ccc',
-            marginTop: '20px',
-          }}
+          className={styles.inputField}
         />
 
         {joinlink.length > 0 && (
-          <div
-            style={{
-              marginTop: '10px',
-              fontSize: '13px',
-              color: isValid ? 'green' : 'red',
-            }}
-          >
+          <div className={clsx(styles.statusMessage, isValid ? styles.valid : styles.invalid)}>
             {isValid ? 'Valid Steam lobby link' : 'Invalid Steam lobby link'}
           </div>
         )}
@@ -87,33 +62,13 @@ export default function JoinPage() {
         <button
           onClick={handleJoin}
           disabled={!isValid}
-          style={{
-            marginTop: '20px',
-            padding: '12px 20px',
-            fontSize: '16px',
-            cursor: isValid ? 'pointer' : 'not-allowed',
-            borderRadius: '6px',
-            border: 'none',
-            backgroundColor: isValid ? '#2d6cdf' : '#999',
-            color: 'white',
-            opacity: isValid ? 1 : 0.6,
-          }}
+          className="glow-button"
+          style={{ marginTop: '24px', width: '100%' }}
         >
           Open in Steam
         </button>
 
-        <div
-          style={{
-            marginTop: '40px',
-            padding: '14px',
-            borderRadius: '8px',
-            backgroundColor: '#f5f7fb',
-            border: '1px solid #e3e8f0',
-            fontSize: '13px',
-            color: '#444',
-            lineHeight: '1.4',
-          }}
-        >
+        <div className={styles.tipBox}>
           <strong>Tip:</strong> Steam lobby links can be entered directly into your browser's
           address bar to launch the game automatically.
         </div>

@@ -108,7 +108,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [],
-        copyright: `Site made by Anthony Stainton.<br><a href="https://docusaurus.io/">Built with Docusaurus.</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} LFG Tool. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,

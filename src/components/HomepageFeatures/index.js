@@ -23,11 +23,7 @@ function Feature({Svg, title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="text--center padding-horiz--md">
-        <p>(Okay I haven't finished the website yet... but I will! soon!)</p><br/>(And then cool pictures go right here!! yea!! isn't this bot so cool.)
-      </div>
-      </div>
+      <></>
     </section>
   );
 }

@@ -1,30 +1,59 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
+/* /src/pages/index.module.css */
 .heroBanner {
-  padding: 4rem 0;
+  padding: 9rem 0 6rem 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.Title {
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+[data-theme='light'] .Title {
+  color: #0f172a;
+}
+
+.Subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  max-width: 580px;
+  margin: 0 auto 3.5rem auto;
+  line-height: 1.6;
+}
+
+[data-theme='light'] .Subtitle {
+  color: #475569;
+}
+
+.noticeContainer {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .releaseNotice {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+[data-theme='light'] .releaseNotice {
+  color: #475569;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
