@@ -2,46 +2,51 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Why use LFG Tool?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+LFG Tool is a Discord bot designed to streamline the Looking For Group experience for gaming communities, drastically reducing management overhead for staff.
 
-## Getting Started
+In typical community servers, LFG channels are notoriously difficult to moderate and frequently attract scammers, hackers, and trolls. LFG Tool solves this problem through robust, automated moderation workflows and extensive back-end logging.
 
-Get started by **creating a new site**.
+## Core Features
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+*Note: This feature list is continuously growing as development progresses.*
 
-### What you'll need
+<details open>
+<summary><b>Moderation Tools</b></summary>
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **Targeted Bans:** Ban problematic users specifically from creating LFGs or using Voice Channel (VC) services.
+- **Comprehensive Logging:** Dedicated logging channels track VC transcripts, member renames, channel joins, creation, transfers, and ownership claims.
+- **Activity Tracking:** Monitor individual user LFG history and track exactly who joined a specific group.
+- **Pardoning System:** Built-in appeal framework to review and lift LFG or VC bans.
+- **Channel Overflow:** Automatically deals with overflowing channels by creating a temp category, only denying once reaching 480 channels.
+- **[TODO] SteamID Blocking:** Block specific SteamIDs from posting or joining lobbies entirely.
 
-## Generate a new site
+</details>
 
-Generate a new Docusaurus site using the **classic template**.
+<details open>
+<summary><b>Looking For Group (LFG) Management</b></summary>
 
-The classic template will automatically be added to your project after you run the command:
+- **Game Branch Selection:** Support for specific game versions (e.g., Vanilla, Beta, Modded).
+- **Customizable Posts:** Users can dynamically update their LFG title and description.
+- **Flexible Join Methods:** Support for Steam Join Links, Lobby Codes, or direct DM requirements.
+- **Access Control:** Banned users are entirely blocked from revealing join methods or links.
+- **Post Refreshes:** Users can bump or resend their LFG post after a configured cooldown.
+- **Post Deletion:** Allows users to easily delete their post if a link or method was entered incorrectly.
+- **Specific game:** Branches can be configured to accept a steamID of a game to make sure none off-topic LFGing is happening.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+</details>
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+<details open>
+<summary><b>Dynamic Voice Channels (VCs)</b></summary>
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- **Join-to-Create:** Automatically generates a temporary voice channel when a user joins a hub category.
+- **Interactive Interface:** An intuitive UI panel for users to interact with and manage their channel settings.
+- **VC Transcripts:** Generates text transcripts of voice interactions for security and review.
+- **Privacy Controls:** Lock your channel or explicitly block specific users from entering.
+- **Channel Customization:** Change VC names, set user capacity limits, or switch voice regions on the fly.
+- **Management & Scaling:** Easily transfer channel ownership or claim an abandoned VC if the original owner leaves.
+- **Staff Override:** Moderators retain visibility and access to all channels, ensuring no hidden spaces.
+- **Automated Cleanup:** Empty channels are instantly deleted. If the bot restarts or goes offline, dead remnants are automatically purged.
 
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+</details>

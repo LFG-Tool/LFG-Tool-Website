@@ -35,20 +35,34 @@
   background-color: transparent !important;
 }
 
-body {
-  background-color: #0d111c;
-  background-image: 
-    linear-gradient(rgba(59, 135, 221, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 135, 221, 0.025) 1px, transparent 1px);
+html {
   background-size: 24px 24px;
   background-position: center top;
+  background-attachment: fixed; 
 }
 
-[data-theme='light'] body {
-  background-color: #c2c6c9;
+html, 
+body, 
+html[data-theme='dark'], 
+html[data-theme='dark'] body,
+html[data-theme='dark'] .main-wrapper {
+  background-color: #0d111c !important;
+  background-image: 
+    linear-gradient(rgba(59, 135, 221, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 135, 221, 0.025) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  background-position: center top !important;
+}
+
+html[data-theme='light'], 
+html[data-theme='light'] body,
+html[data-theme='light'] .main-wrapper {
+  background-color: #bbbec4 !important;
   background-image: 
     linear-gradient(rgba(59, 135, 221, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 135, 221, 0.05) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(59, 135, 221, 0.05) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  background-position: center top !important;
 }
 
 .main-wrapper {
@@ -184,5 +198,80 @@ body {
 [data-theme='light'] .secondary-ghost-button:hover {
   background: rgba(0, 0, 0, 0.05) !important;
   border-color: rgba(0, 0, 0, 0.2);
+  color: #0f172a !important;
+}
+
+.theme-doc-card-container {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.theme-doc-card-container p {
+  color: #94a3b8 !important;
+  font-size: 0.9rem;
+}
+
+.theme-doc-card-container:hover {
+  transform: translateY(-2px);
+  background: rgba(59, 135, 221, 0.04) !important;
+  border-color: rgba(59, 135, 221, 0.3) !important;
+  box-shadow: 0 10px 25px rgba(59, 135, 221, 0.05) !important;
+  text-decoration: none !important;
+}
+
+.theme-doc-card-container:hover * {
+  color: #ffffff !important;
+}
+
+[data-theme='light'] .theme-doc-card-container {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(59, 135, 221, 0.12) !important;
+  box-shadow: 0 8px 20px rgba(59, 135, 221, 0.02) !important;
+}
+
+[data-theme='light'] .theme-doc-card-container p {
+  color: #475569 !important;
+}
+
+[data-theme='light'] .theme-doc-card-container:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 12px 25px rgba(59, 135, 221, 0.06) !important;
+}
+
+[data-theme='light'] .theme-doc-card-container:hover * {
+  color: #0f172a !important;
+}
+
+.alert.alert--info {
+  background: rgba(59, 135, 221, 0.03) !important;
+  border: 1px solid rgba(59, 135, 221, 0.2) !important;
+  border-left: 5px solid var(--ifm-color-primary) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.alert.alert--info strong,
+.alert.alert--info .admonitionHeading_node_modules-\@docusaurus-theme-classic-theme-Admonition-styles-module {
+  color: #ffffff !important;
+}
+
+[data-theme='light'] .alert.alert--info {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(59, 135, 221, 0.15) !important;
+  border-left: 5px solid var(--ifm-color-primary) !important;
+  color: #334155 !important;
+  box-shadow: 0 8px 24px rgba(59, 135, 221, 0.04);
+}
+
+[data-theme='light'] .alert.alert--info strong,
+[data-theme='light'] .alert.alert--info .admonitionHeading_node_modules-\@docusaurus-theme-classic-theme-Admonition-styles-module {
   color: #0f172a !important;
 }

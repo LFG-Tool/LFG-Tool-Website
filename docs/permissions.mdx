@@ -1,0 +1,19 @@
+---
+sidebar_position: 2
+---
+
+# Permissions
+
+In order to properly function, LFG Tool requires a few permissions, any reasonable admin will want to know why we need those permissions.
+
+### Required Bot Permissions
+
+| Discord Permission | Purpose / Feature Impact | Why It's Necessary |
+| :--- | :--- | :--- |
+| **Send Messages** | Core Interaction & Auditing | Crucial for generating LFG interfaces, dispatching system alerts, and maintaining active logging. |
+| **Embed Links** | Rich UI Elements | Essential because the bot heavily utilizes interactive embeds; missing this completely breaks UI rendering and logging cards. |
+| **Attach Files** | Advanced Logging | Required to successfully generate, upload, and dispatch media or text logs within voice channels. |
+| **Manage Channels** | Dynamic Voice Channels (VCs) | Grants the bot the capability to automatically create, rename, and delete temporary gaming voice channels on demand. |
+| **Manage Roles** *(/Permissions)* | Access Control & Moderation | The VC system uses this to enforce privacy rules, such as whitelisting, blacklisting, or hiding VCs |
+| **Move Members** | Channel Moderation | Allows the VC system to instantly disconnect or isolate banned users, ensuring temporary channels remain secure. |
+| **Bypass Slow-mode** | Performance & Reliability | Ensures the bot responds instantly to user interactions without getting choked or restricted by channel cooldowns. |
