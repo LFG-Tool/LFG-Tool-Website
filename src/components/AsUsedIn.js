@@ -10,7 +10,7 @@ const Servers = [
     name: "AGGRO CRAB",
     url: "https://discord.com/invite/aggrocrab",
     img: "https://cdn.discordapp.com/icons/672881520406691868/1fcff60bd3695108345fc9170ddcccbc.webp?size=256&quality=lossless",
-    members: "13,000",
+    members: "14,000",
   },
 ];
 
