@@ -77,21 +77,6 @@ function LandingFeatures() {
           text="Provides moderation tools and logs for join records, voice renames, and voice chat history."
           img="/img/example3.png"
         />
-
-        <div className="margin-top--xl text--center">
-          <h2>Is LFG Tool right for your server?</h2>
-
-          <p style={{ opacity: 0.7 }}>
-            You may be interested if you are experiencing one of these issues:
-          </p>
-
-          <ul style={{ maxWidth: 700, margin: '0 auto', textAlign: 'left', lineHeight: 1.8 }}>
-            <li>Your existing temporary voice channel bot is forgetting its channels after outages.</li>
-            <li>You run a gaming community where LFGs use <code>steam://joinlobby/...</code> links.</li>
-            <li>You receive reports on in-game behaviour but cannot reliably find the user's Discord account.</li>
-          </ul>
-        </div>
-
       </div>
     </section>
   );
