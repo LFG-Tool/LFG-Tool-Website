@@ -275,3 +275,43 @@ html[data-theme='light'] .main-wrapper {
 [data-theme='light'] .alert.alert--info .admonitionHeading_node_modules-\@docusaurus-theme-classic-theme-Admonition-styles-module {
   color: #0f172a !important;
 }
+@media (max-width: 996px) {
+
+  .navbar-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    border-radius: 0 !important;
+    z-index: 9999 !important;
+
+    background: rgba(13, 17, 28, 0.98) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    padding: 2rem !important;
+    overflow-y: auto !important;
+  }
+
+  [data-theme='light'] .navbar-sidebar {
+    background: rgba(255, 255, 255, 0.98) !important;
+  }
+
+  .navbar-sidebar__items {
+    padding: 0 !important;
+  }
+
+  .navbar-sidebar__item {
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
+  }
+
+  .navbar__toggle {
+    z-index: 10000 !important;
+  }
+}
