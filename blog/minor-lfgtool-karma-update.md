@@ -17,9 +17,7 @@ LFG Tool now lets you rate other players that you've played with.
 
 You can now interact with player reputation directly inside LFG Tool:
 
-- `/karma lookup` - Lets you view a player’s karma score  
-- `/karma praise` - Praise another player you had a good experience with  
-- `/karma dislike` - Down-vote a player based on negative experiences  
+- `/karma` - Lets you view a player’s karma score. On the same message you'll be provided with buttons to upvote or downvote other people's score! You cannot vote on yourself. sorry.
 
 ---
 
