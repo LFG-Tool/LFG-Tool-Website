@@ -1,0 +1,19 @@
+major-updates:
+  label: Major Updates
+  permalink: /major-updates
+  description: Large releases, major system changes, and significant improvements to LFG Tool.
+
+minor-updates:
+  label: Minor Updates
+  permalink: /minor-updates
+  description: Smaller improvements, fixes, and quality-of-life updates.
+
+new-features:
+  label: New Features
+  permalink: /new-features
+  description: Newly added systems, commands, and functionality for LFG Tool.
+
+news:
+  label: News
+  permalink: /news
+  description: General announcements, community news, and project updates.

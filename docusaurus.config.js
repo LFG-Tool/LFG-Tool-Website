@@ -53,15 +53,12 @@ const config = {
             'https://github.com/LFG-Tool/LFG-Tool-Website/tree/main/',
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
+          routeBasePath: "/updates",
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -97,6 +94,11 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            to: '/updates',
+            position: 'left',
+            label: 'Updates & News',
           },
           {
             href: 'https://github.com/LFG-Tool/LFG-Tool-Website',
