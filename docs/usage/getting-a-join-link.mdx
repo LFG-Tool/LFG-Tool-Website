@@ -1,0 +1,94 @@
+# Getting a Steam Join Lobby Link
+
+LFG Tool supports Steam join lobby links for supported games.
+This guide will walk you through enabling joinable lobbies and copying your join link.
+
+---
+
+# Step 1 — Enable Friend Join Lobbies
+
+Some games require your lobby to be set to **Open to Friends** or **Public** before Steam can generate a working join link.
+
+## PEAK
+
+From the main menu:
+
+1. Open **Options**
+2. Scroll to the bottom
+3. Find **Lobby Mode**
+4. Change it to **Open to Friends**
+
+![PEAK Guide](/img/peakguide.png)
+
+---
+
+## Crashout Crew
+
+From the main menu:
+
+1. Open **Options**
+2. Scroll to the bottom
+3. Find **Lobby Mode**
+4. Change it to **Open to Friends**
+
+![Crashout Crew Guide](/img/ccguide.png)
+
+---
+
+# Step 2 — Copy Your Steam Join Link
+
+Once your lobby is open to friends:
+
+1. Open **Steam**
+2. Click your **profile name** in the top-right
+3. Click **Profile**
+4. On the right side of your profile, find the green **Join Game** button
+5. Right click the button
+6. Click **Copy Link Address**
+
+![Steam Join Link Guide](/img/joinlinkguide.png)
+
+Your copied link should look something like this:
+
+```text
+steam://joinlobby/.../.../...
+```
+
+---
+
+# Step 3 — Paste It Into LFG Tool
+
+Whenever LFG Tool asks for a join link, simply paste the copied Steam lobby link.
+
+![LFG Tool Join Link Example](/img/joinlinkbot.png)
+
+---
+
+# Important Notes
+
+* If something happens to the lobby such as the host changes, the lobby gets remade or even if some kind of game state changes your join link may change.
+* Refresh your Steam profile before copying a new join link.
+* Only supported games will generate valid join links.
+
+# Known Supported Games
+
+A few games known to support `steam://joinlobby/` links are
+
+* PEAK
+* Crashout Crew
+* Lethal Company
+* Content Warning
+* R.E.P.O.
+
+Any games that do generate Steam lobby links absolutely will work with LFG Tool we're just unsure of all of them.
+
+## Notes
+
+Some games may require:
+
+* Lobby visibility set to **Friends Only** or **Open to Friends** rather than **Invite Only**
+* Steam Overlay enabled
+* Steam profile refreshed after hosting
+
+If your game supports Steam's green **Join Game** button on profiles, it will usually work with LFG Tool.
+
