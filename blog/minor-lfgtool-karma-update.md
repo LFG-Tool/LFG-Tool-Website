@@ -19,7 +19,7 @@ You can now interact with player reputation directly inside LFG Tool:
 
 - `/karma lookup` - Lets you view a player’s karma score  
 - `/karma praise` - Praise another player you had a good experience with  
-- `/karma dislike` - Downvote a player based on negative experiences  
+- `/karma dislike` - Down-vote a player based on negative experiences  
 
 ---
 
@@ -27,9 +27,9 @@ You can now interact with player reputation directly inside LFG Tool:
 
 We recommend using this system honestly:
 - Praise players you had good games with
-- Downvote players who were disruptive or unpleasant
+- Down-vote players who were disruptive or unpleasant
 
-We hope this feature encourages players to generally be nice and pleasant to others. If anyone gives you a hard time then go ahead and downvote them! One thing that will not be allowed is targeted downvoting. You should only vote people based off your interactions not what interaction your friend had.
+We hope this feature encourages players to generally be nice and pleasant to others. If anyone gives you a hard time then go ahead and down-vote them! One thing that will not be allowed is targeted down-voting. You should only vote people based off your interactions not what interaction your friend had.
 
 ---
 
