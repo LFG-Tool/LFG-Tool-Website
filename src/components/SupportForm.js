@@ -40,9 +40,8 @@ export default function SupportForm() {
       timestamp: new Date().toISOString(),
     };
 
-    console.log("📨 Support Form Submission:", payload);
-
-    alert("Submitted! Check console for JSON output.");
+    // Send a POST request to an eventual API endpoint with payload.
+    
 
     setForm({
       category: "Feedback",
@@ -59,7 +58,6 @@ export default function SupportForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
-      {/* Category */}
       <label className={styles.label}>
         Category
         <select
@@ -74,7 +72,6 @@ export default function SupportForm() {
         </select>
       </label>
 
-      {/* Subject */}
       <label className={styles.label}>
         Subject Line
         <input
@@ -89,7 +86,6 @@ export default function SupportForm() {
         />
       </label>
 
-      {/* Message */}
       <label className={styles.label}>
         Message (max 2000 chars)
         <textarea
@@ -103,7 +99,6 @@ export default function SupportForm() {
         />
       </label>
 
-      {/* Email */}
       <label className={styles.label}>
         Contact Email
         <input
