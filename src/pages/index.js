@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import LandingFeatures from '@site/src/components/HomepageFeatures';
+import AsUsedIn from '@site/src/components/AsUsedIn.js';
 import { ExternalLink } from 'lucide-react';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -12,7 +13,7 @@ import styles from './index.module.css';
 const Available = false;
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
 
   return (
     <header className={styles.heroBanner}>
@@ -30,7 +31,7 @@ function HomepageHeader() {
               Add to your server
               <ExternalLink size={18} />
             </Link>
-            
+
             <Link className="secondary-ghost-button" to="/discord">
               Join our Discord Server
               <ExternalLink size={18} />
@@ -55,12 +56,15 @@ function HomepageHeader() {
   );
 }
 
+
 export default function Home() {
   return (
     <Layout description="LFG Tool">
       <HomepageHeader />
+
       <main style={{ position: 'relative', zIndex: 2 }}>
-        <HomepageFeatures />
+        <AsUsedIn/>
+        <LandingFeatures />
       </main>
     </Layout>
   );
