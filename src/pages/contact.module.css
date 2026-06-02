@@ -1,0 +1,31 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* IMPORTANT: use Docusaurus content height instead of 100vh */
+  min-height: calc(80vh - var(--ifm-navbar-height));
+
+  padding: 0; /* remove extra vertical push */
+}
+
+.wrapper {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  /* this is the key for visual balance */
+  transform: translateY(-20px);
+}
+
+.title {
+  margin: 0;
+}
+
+.discord {
+  margin: 0;
+}

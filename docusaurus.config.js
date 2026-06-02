@@ -101,6 +101,11 @@ const config = {
             label: 'Updates & News',
           },
           {
+            to: '/contact',
+            position: 'left',
+            label: 'Contact',
+          },
+          {
             href: 'https://github.com/LFG-Tool/LFG-Tool-Website',
             label: 'GitHub',
             position: 'right',
