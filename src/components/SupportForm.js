@@ -36,13 +36,20 @@ export default function SupportForm() {
       category: form.category,
       subject: form.subject.slice(0, 80),
       message: form.message.slice(0, 1000),
-      email: form.email,
-      timestamp: new Date().toISOString(),
+      email: form.email
     };
 
-    // Send a POST request to an eventual API endpoint with payload.
-    
+    const response = await fetch("https://api.lfgtools.xyz/v1/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
 
+    const data = await response.json();
+
+    if(data.code = 200) alert("Sent feedback!");
+    else alert("Not accepted! You may be on cooldown.")
+    
     setForm({
       category: "Feedback",
       subject: "",
