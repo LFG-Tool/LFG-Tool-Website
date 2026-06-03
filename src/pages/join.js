@@ -43,7 +43,7 @@ export default function JoinPage() {
     <Layout title="Join Lobby">
       <div className={styles.joinContainer}>
         <h1 className={styles.title}>Join Steam Lobby</h1>
-        <p className={styles.subtitle}>Paste a Steam lobby link below to safely jump in.</p>
+        <p className={styles.subtitle}>Paste a Steam lobby link below to jump in.</p>
 
         <input
           type="text"
