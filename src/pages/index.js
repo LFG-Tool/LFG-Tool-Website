@@ -10,7 +10,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 // Just set this to true when we want other people to use it freely.
-const Available = false;
+const Available = true;
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
