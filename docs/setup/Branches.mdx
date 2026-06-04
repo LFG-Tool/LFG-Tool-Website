@@ -1,0 +1,44 @@
+# Branches
+
+Branches are the core system that lets LFG Tool organize matchmaking spaces into structured, flexible categories.
+
+Instead of forcing all players into one generic LFG channel, branches let you split your server into multiple "sections" each with its own purpose, rules, and configuration.
+
+This makes your LFG system scalable for:
+- Different games entirely
+- Different versions of the same game (live, beta, PTR, modded, etc.)
+- Regional or rule-set based matchmaking (casual, ranked, hardcore, etc.)
+
+---
+
+## What is a Branch?
+
+A **Branch** is a configured LFG channel tied to your server that controls how lobbies behave inside it.
+
+Each branch contains:
+
+- A dedicated Discord channel
+- A name and description
+- Game configuration settings (App ID, join method, lobby rules)
+- Optional locking state for temporary events or moderation control
+
+Think of a branch as a **self-contained LFG environment** inside your server.
+
+---
+
+## Using the `/branch` Command
+
+The `/branch` command is the admin control panel for managing all LFG branches in your server.
+
+When you run `/branch`, it opens a management panel showing all existing branches, their channels, descriptions, and settings. From here, you can fully control how your LFG system is structured.
+
+You can use it to:
+- **Create a branch** by clicking “Create Branch” and filling out a simple form (name, description, channel, optional App ID and expiry settings).
+- **Modify a branch** to update its settings without changing its identity or breaking existing data.
+- **Lock or unlock a branch** to temporarily disable or enable LFG activity in that channel, useful for events or maintenance.
+- **Delete a branch** to permanently remove it from your server configuration.
+
+In short, `/branch` is the central tool for organizing and controlling all LFG sections in your server.
+
+Currently we have a limit of 3 branches per server however if this is inconvenience let us know and we may raise the limit.
+As well each channel is limited to 1 branch as if you try to create another one it will overwrite the previous one.
