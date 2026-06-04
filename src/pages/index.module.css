@@ -1,4 +1,3 @@
-/* /src/pages/index.module.css */
 .heroBanner {
   padding: 9rem 0 6rem 0;
   text-align: center;
@@ -46,9 +45,10 @@
 }
 
 [data-theme='light'] .releaseNotice {
-  color: #475569;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--ifm-color-primary-darkest);
+  background: rgba(59, 135, 221, 0.05);
+  border: 1px solid rgba(59, 135, 221, 0.15);
+  font-weight: 500;
 }
 
 .buttonWrapper {

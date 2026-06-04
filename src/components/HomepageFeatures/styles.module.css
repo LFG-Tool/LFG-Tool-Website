@@ -9,3 +9,11 @@
   height: 200px;
   width: 200px;
 }
+
+.developerCardLink {
+  cursor: pointer;
+}
+
+.developerCardLink:hover {
+  transform: translateY(-4px);
+}

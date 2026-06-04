@@ -113,7 +113,6 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
         links: [],
         copyright: `Copyright © ${new Date().getFullYear()} LFG Tool. All rights reserved.`,
       },
