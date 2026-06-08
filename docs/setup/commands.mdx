@@ -1,0 +1,297 @@
+---
+
+title: Commands
+sidebar_position: 4
+toc_min_heading_level: 2
+toc_max_heading_level: 2
+-------------------
+
+---
+
+# Command Directory
+
+This page contains a full overview of LFG Tool commands and what they do.
+
+---
+
+# Setup Commands
+
+These commands are used to configure and manage the bot for your server.
+
+---
+
+## `/configure`
+
+Provides the main guild configuration panel.
+
+The configuration panel allows you to:
+
+* Configure moderation settings
+* Configure temporary voice channels
+* Set logging channels
+
+---
+
+## `/interface [channel]`
+
+Sends the LFG and Voice configuration interfaces into the specified channel.
+
+### Parameters
+
+#### `channel`
+
+The channel where the LFG and VC interfaces should be sent.
+
+---
+
+If you only want one of the interfaces:
+
+* The bot sends them as separate messages
+* You can simply delete the one you do not want
+
+
+---
+
+## `/branch`
+
+Provides the branch configuration panel.
+
+Branches allow communities to separate LFG systems into categories such as:
+
+* Vanilla
+* Modded
+* Beta
+* Different game versions
+
+For more information, see:
+
+[Branch Configuration](../setup/branches)
+
+---
+
+# Community Commands
+
+These commands are available to normal community members.
+
+---
+
+## `/karma [user]`
+
+Lets you look up a user's karma score.
+
+You can also interact with the buttons on the response to:
+
+* Praise users
+* Remove karma from users
+
+Karma is intended to help communities identify:
+
+* Friendly players
+* Helpful players
+* Repeat negative behaviour
+
+### Parameters
+
+#### `user`
+
+The user whose karma profile you would like to view.
+
+---
+
+# Moderation Commands
+
+These commands are used to moderate LFG usage and temporary voice channels.
+
+---
+
+## `/ban [user] [type] [reason] [length] [notify]`
+
+Allows moderators to ban users from:
+
+* LFG usage
+* Temporary voice channels
+* Or both systems
+
+### Parameters
+
+#### `user`
+
+The user you would like to punish.
+
+---
+
+#### `type`
+
+Determines which systems the punishment applies to.
+
+Available options:
+
+* `LFG`
+* `VC`
+* `Both`
+
+---
+
+#### `reason`
+
+The reason for the punishment.
+
+Example:
+
+```text
+Harassment
+```
+
+---
+
+#### `length`
+
+How long the punishment should last.
+
+If not specified, the punishment defaults to a permanent ban.
+
+Permanent bans are internally stored as a 100 year duration.
+
+### Time Format Examples
+
+```text
+1d   = 1 day
+12h  = 12 hours
+30m  = 30 minutes
+```
+
+Supported units:
+
+* `d` = days
+* `h` = hours
+* `m` = minutes
+
+---
+
+#### `notify`
+
+Determines whether the bot should notify the user about the punishment.
+
+Defaults to:
+
+```text
+true
+```
+
+---
+
+## `/lookup lobby [lobby]`
+
+Looks up all join records for a lobby.
+
+Useful for:
+
+* Identifying who joined a lobby
+* Investigating reports
+* Tracking player interactions
+
+### Parameters
+
+#### `lobby`
+
+The lobby ID you would like to search.
+
+---
+
+## `/lookup steam [steamid]`
+
+Looks up all records associated with a Steam ID.
+
+### Parameters
+
+#### `steamid`
+
+The Steam ID you would like to search.
+
+---
+
+## `/lookup user [user]`
+
+Looks up all lobbies a user has joined.
+
+Useful when:
+
+* Investigating reports
+* Tracking repeat offenders
+* Identifying alternate accounts
+
+### Parameters
+
+#### `user`
+
+The user you would like to search.
+
+---
+
+## `/pardon case [caseid]`
+
+Pardons a specific moderation case.
+
+### Parameters
+
+#### `caseid`
+
+The case ID you would like to pardon.
+
+---
+
+## `/pardon user [user]`
+
+Pardons all active punishments from a user.
+
+### Parameters
+
+#### `user`
+
+The user whose punishments should be removed.
+
+---
+
+## `/case [caseid]`
+
+Looks up a specific moderation case.
+
+### Parameters
+
+#### `caseid`
+
+The moderation case ID to search.
+
+---
+
+## `/steamid ban [steamid]`
+
+Bans a Steam ID from using LFG Tool.
+
+This is useful for preventing users from bypassing punishments using alternate Discord accounts.
+
+### Parameters
+
+#### `steamid`
+
+The Steam ID to ban.
+
+---
+
+## `/steamid list`
+
+Lists all banned Steam IDs.
+
+---
+
+## `/steamid unban [steamid]`
+
+Removes a Steam ID ban.
+
+### Parameters
+
+#### `steamid`
+
+The Steam ID to unban.
+
+---

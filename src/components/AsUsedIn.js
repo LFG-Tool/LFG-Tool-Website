@@ -1,18 +1,17 @@
-const Servers = [
-  // not yet
-  // {
-  //   name: "PEAK",
-  //   url: "https://discord.gg/peakgame",
-  //   img: "https://cdn.discordapp.com/icons/1368870708335083650/9547ab960b4e3337ae6f608a63aab45e.webp?size=256&quality=lossless",
-  //   members: "520,000",
-  // },
-  {
+const PEAK = {
+    name: "PEAK",
+    url: "https://discord.gg/peakgame",
+    img: "/img/icons/peak.webp",
+    members: "520,000",
+  }
+const AGGRO_CRAB = {
     name: "AGGRO CRAB",
-    url: "https://discord.com/invite/aggrocrab",
-    img: "https://cdn.discordapp.com/icons/672881520406691868/1fcff60bd3695108345fc9170ddcccbc.webp?size=256&quality=lossless",
+    url: "https://discord.gg/aggrocrab",
+    img: "/img/icons/aggro.webp",
     members: "14,000",
-  },
-];
+  }
+
+const Servers = [AGGRO_CRAB];
 
 export default function AsUsedIn({ gap = 16 }) {
   return (
