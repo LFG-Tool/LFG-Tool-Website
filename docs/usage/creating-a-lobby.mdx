@@ -1,0 +1,117 @@
+---
+title: Creating a Lobby
+description: Step-by-step guide on creating a lobby using LFG Tool
+---
+
+Every server will have their own LFG rules, so ensure you follow them before creating a lobby.
+
+## Finding the LFG Interface
+
+Locate your server’s LFG interface. You should see the main control panel with the following options:
+
+- **Create** - This is the button you want to use to create your lobby.
+- **Resend** - Every 2 minutes you can refresh your LFG lobby to ensure it doesn't get cleared automatically.
+- **Settings** - Allows you to change the title and description of your lobbies.
+- **Delete** - Deletes your currently posted lobby.
+
+![LFG Interface](/img/guide1/image1.png)
+---
+
+## Creating Your Lobby
+
+After clicking the green **Create** button:
+
+![Create Button Flow](/img/guide1/image2.png)
+
+You will first be asked to select which **branch** you would like to play on.
+
+Branches may represent different rule sets, playstyles, or even different games depending on the community.  
+You can learn more about branches here: [Branches Guide](../setup/branches)
+
+
+![Create Button Flow](/img/guide1/image3.png)
+
+---
+
+## Join Method
+
+After selecting your branch, you will be prompted to choose your **join method**.
+
+### Steam Join Link (Most Common for Steam Games)
+
+For most Steam based games, you will use a join lobby link in the format:
+```
+steam://joinlobby/...
+```
+
+If you are unsure how to get this link, follow this guide:
+[Getting a Join Link](./getting-a-join-link)
+
+![Steam Join Example](/img/joinlinkbot.png)
+
+---
+
+### Lobby Code
+
+Some games do not use links and instead use a **lobby code**.
+
+This is common for games such as:
+
+- Phasmophobia  
+- Among Us  
+- Jackbox Party Packs  
+
+If your game uses a code like `XXXXX` or `123-456`, simply enter that when prompted.
+
+---
+
+## Posting Your Lobby
+
+After you submit your join method and game code, the bot will post your lobby automatically.
+
+You should see a confirmation message:
+
+**LFG Interface - Success!**
+
+Now navigate to the LFG channel for your branch, and you will see your lobby listed there.
+
+![Example](/img/example1.png)
+
+---
+
+Your lobby is now live and visible to others in the server. Make sure to use **Resend** every 2 minutes if you want to keep it active and visible.
+
+## Errors
+
+If something goes wrong while creating or posting your lobby, the bot will display an error message. Below are the most common errors and how to resolve them.
+
+---
+
+###  Incorrect Game Error
+"LFG Interface - Incorrect Game!"
+
+**What this means:**
+
+The Steam join link you provided is valid, but it does not match the game assigned to the branch you selected.
+
+**How to fix it:**
+
+- Make sure the join link is for the correct game
+- Check that you selected the correct branch
+- Generate a new Steam join link for the correct game if needed
+
+---
+
+### Invalid Join Link
+"... is not a valid join link."
+
+This means the input was detected to not be a Steam join lobby link.
+They may look something vaguely like this
+
+`steam://joinlobby/[AppId]/[LobbyId]/[Your SteamId]`
+
+If you're unsure how to get it, [follow this guide](./getting-a-join-link)
+
+---
+
+If issues continue, delete your current lobby and create a new one, ensuring the correct branch and join method are selected.
