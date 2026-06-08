@@ -24,7 +24,7 @@ export default function SupportForm() {
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (!isValidEmail(form.email)) {
@@ -36,20 +36,24 @@ export default function SupportForm() {
       category: form.category,
       subject: form.subject.slice(0, 80),
       message: form.message.slice(0, 1000),
-      email: form.email
+      email: form.email,
     };
 
-    const response = await fetch("https://api.lfgtools.xyz/v1/feedback", {
+    try {
+      const response = await fetch("https://api.lfgtool.xyz/v1/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
-    const data = await response.json();
+    if (response.ok) alert("Sent feedback!");
+    else alert("Not accepted! You may be on cool down.");
+    } catch (error) {
+      alert("Failed to send.");
+      console.log(error);
+      
+    }
 
-    if(data.code = 200) alert("Sent feedback!");
-    else alert("Not accepted! You may be on cooldown.")
-    
     setForm({
       category: "Feedback",
       subject: "",
@@ -60,8 +64,7 @@ export default function SupportForm() {
     setEmailTouched(false);
   }
 
-  const emailError =
-    emailTouched && form.email && !isValidEmail(form.email);
+  const emailError = emailTouched && form.email && !isValidEmail(form.email);
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
@@ -120,7 +123,6 @@ export default function SupportForm() {
           autoComplete="email"
           required
         />
-
         {emailError && (
           <span style={{ color: "red", fontSize: "12px" }}>
             Please enter a valid email address.

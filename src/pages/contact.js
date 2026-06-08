@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import styles from "./contact.module.css";
-
+import SupportForm from "../components/SupportForm.js";
 export default function Contact() {
   return (
     <Layout>
@@ -19,9 +19,12 @@ export default function Contact() {
             >
               https://discord.lfgtool.xyz
             </a>
+            <br/>
+            or use the form below.
           </p>
         </div>
       </main>
+      <SupportForm/>
     </Layout>
   );
 }
