@@ -1,0 +1,88 @@
+.userNavbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: transparent;
+  border: none;
+  padding: 0.35rem 0.6rem;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  color: var(--ifm-navbar-link-color);
+  font: inherit;
+
+  transition: background-color 0.15s ease;
+}
+
+.userButton:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+.userAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: block;
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.userDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+
+  min-width: 190px;
+
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  padding: 0.35rem;
+
+  z-index: 1000;
+}
+
+.userDropdownItem {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.userDropdownItem:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+

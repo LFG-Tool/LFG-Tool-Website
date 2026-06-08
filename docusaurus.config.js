@@ -110,6 +110,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },  
+          // {
+          //   type: 'custom-user-navbar',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
