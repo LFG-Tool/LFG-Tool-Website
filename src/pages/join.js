@@ -38,7 +38,7 @@ export default function JoinPage() {
     if (!isValid) return;
     window.location.href = joinlink;
   };
-  
+
   return (
     <Layout title="Join Lobby">
       <div className={styles.joinContainer}>

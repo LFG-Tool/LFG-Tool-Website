@@ -66,7 +66,7 @@ export default function ServersPage() {
             : null;
 
         return (
-            <a href={(guild.botPresent ? `/server/${guild.id}` : "/add")} className="guildCard">
+            <a href={(guild.botPresent ? `/server?id=${guild.id}` : "/add")} className="guildCard">
                 {icon ? (
                     <img src={icon} alt={guild.name} className="guildIcon" />
                 ) : (
@@ -84,13 +84,13 @@ export default function ServersPage() {
 
                 <div className="pageHeader">
                     <h1 className="title">Servers</h1>
-                    <p className="subtitle">Manage your Discord guilds</p>
+                    <p className="subtitle">Manage your Discord servers</p>
                 </div>
 
                 <div className="card">
                     {managedGuilds.length > 0 && (
                         <div className="section">
-                            <h2>Managed Servers</h2>
+                            <h2>Manage Servers</h2>
                             <div className="grid">
                                 {managedGuilds.map((g) => (
                                     <ServerCard key={g.id} guild={g} />
