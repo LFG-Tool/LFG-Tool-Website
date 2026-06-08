@@ -27,7 +27,6 @@ export default function UserNavbarItem() {
   }, []);
 
   const loginWithDiscord = () => {
-    // Change this to your backend OAuth endpoint
     window.location.href = '/auth/discord';
   };
 
