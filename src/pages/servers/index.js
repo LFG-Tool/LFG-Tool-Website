@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
-import "./servers.css";
+import styles from "./servers.module.css";
 
 export default function ServersPage() {
     const [data, setData] = useState(null);
@@ -36,8 +36,8 @@ export default function ServersPage() {
     if (loading) {
         return (
             <Layout>
-                <div className="page">
-                    <div className="pageHeader">
+                <div className={styles.page}>
+                    <div className={styles.pageHeader}>
                         <h1 className="title">Loading servers</h1>
                     </div>
                 </div>
@@ -48,8 +48,8 @@ export default function ServersPage() {
     if (!data) {
         return (
             <Layout>
-                <div className="page">
-                    <div className="pageHeader">
+                <div className={styles.page}>
+                    <div className={styles.pageHeader}>
                         <h1 className="title">Failed to load</h1>
                         <p className="subtitle">we were unable to find your servers. Please ensure you are logged in.</p>
                     </div>
@@ -63,14 +63,14 @@ export default function ServersPage() {
     const ServerCard = ({ guild }) => {
         const icon = guild.icon
             ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128`
-            : null;
+            : `https://cdn.discordapp.com/embed/avatars/0.png?size=128`;
 
         return (
-            <a href={(guild.botPresent ? `/server?id=${guild.id}` : "/add")} className="guildCard">
+            <a href={(guild.botPresent ? `/server?id=${guild.id}` : "/add")} className={styles.guildCard}>
                 {icon ? (
-                    <img src={icon} alt={guild.name} className="guildIcon" />
+                    <img src={icon} alt={guild.name} className={styles.guildIcon} />
                 ) : (
-                    <div className="guildPlaceholder" />
+                    <div className={styles.guildPlaceholder} />
                 )}
 
                 <div className="guildName">{guild.name}</div>
@@ -80,18 +80,17 @@ export default function ServersPage() {
 
     return (
         <Layout>
-            <div className="page">
-
-                <div className="pageHeader">
-                    <h1 className="title">Servers</h1>
-                    <p className="subtitle">Manage your Discord servers</p>
+            <div className={styles.page}>
+                <div className={styles.pageHeader}>
+                    <h1 className={styles.title}>Servers</h1>
+                    <p className={styles.subtitle}>Manage your Discord servers</p>
                 </div>
 
-                <div className="card">
+                <div className={styles.card}>
                     {managedGuilds.length > 0 && (
-                        <div className="section">
+                        <div className={styles.section}>
                             <h2>Manage Servers</h2>
-                            <div className="grid">
+                            <div className={styles.grid}>
                                 {managedGuilds.map((g) => (
                                     <ServerCard key={g.id} guild={g} />
                                 ))}
@@ -100,9 +99,9 @@ export default function ServersPage() {
                     )}
 
                     {inviteGuilds.length > 0 && (
-                        <div className="section">
-                            <h2>Unmanaged Servers</h2>
-                            <div className="grid">
+                        <div className={styles.section}>
+                            <h2>Add LFG Tool to!</h2>
+                            <div className={styles.grid}>
                                 {inviteGuilds.map((g) => (
                                     <ServerCard key={g.id} guild={g} />
                                 ))}

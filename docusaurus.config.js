@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -78,7 +78,7 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: false, 
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       navbar: {
@@ -105,19 +105,39 @@ const config = {
             position: 'left',
             label: 'Contact',
           },
-          {
-            href: 'https://github.com/LFG-Tool/LFG-Tool-Website',
-            label: 'GitHub',
-            position: 'right',
-          },  
           // {
-          //   type: 'custom-user-navbar',
+          //   href: 'https://github.com/LFG-Tool/LFG-Tool-Website',
+          //   label: 'GitHub',
           //   position: 'right',
           // },
+          {
+            type: 'custom-user-navbar',
+            position: 'right',
+          },
         ],
       },
       footer: {
-        links: [],
+        links: [
+          {
+            title: 'Platform',
+            items: [
+              { label: 'Add To Discord', href: 'https://lfgtool.xyz/add', },
+              { label: 'Discord Server', href: 'https://discord.lfgtool.xyz', },
+              { label: 'Join Tool', to: '/join', },
+            ],
+          },
+          {
+            title: 'Documentation', items: [
+              { label: 'Getting Started', to: '/docs/intro', },
+              { label: 'Updates & News', to: '/updates', },
+              { label: 'Contact', to: '/contact', },
+            ],
+          },
+          {
+            title: 'Development', items: [
+              { label: 'GitHub Organization', href: 'https://github.com/LFG-Tool/', },
+              { label: 'Website Repository', href: 'https://github.com/LFG-Tool/LFG-Tool-Website', },],
+          },],
         copyright: `Copyright © ${new Date().getFullYear()} LFG Tool. All rights reserved.`,
       },
       prism: {

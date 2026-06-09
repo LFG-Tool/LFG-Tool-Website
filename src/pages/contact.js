@@ -22,9 +22,9 @@ export default function Contact() {
             <br/>
             or use the form below.
           </p>
+          <SupportForm/>
         </div>
       </main>
-      <SupportForm/>
     </Layout>
   );
 }
