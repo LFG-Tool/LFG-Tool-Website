@@ -88,9 +88,10 @@ export default function UserNavbarItem() {
   // logged out
   if (!user) {
     return (
-      <a className="navbar__item navbar__link" onClick={loginWithDiscord}>
-        Login with Discord
-      </a>
+        <></>
+    //   <a className="navbar__item navbar__link" onClick={loginWithDiscord}>
+    //     Login with Discord
+    //   </a>
     );
   }
 
