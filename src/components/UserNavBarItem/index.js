@@ -2,34 +2,33 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
 export default function UserNavbarItem() {
-  // 🚀 instantly load cached user
-  const [user, setUser] = useState(() => {
-    if(localStorage == null) return;
-    const cached = localStorage.getItem('user');
-
-    if (!cached) return null;
-
-    try {
-      return JSON.parse(cached);
-    } catch {
-      return null;
-    }
-  });
-
+  const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
   const [checkedAuth, setCheckedAuth] = useState(false);
 
+  // Load cached user safely (browser-only)
   useEffect(() => {
-    if(localStorage == null) return;
+    if (typeof window === 'undefined') return;
+
+    try {
+      const cached = localStorage.getItem('user');
+      if (cached) setUser(JSON.parse(cached));
+    } catch {
+      // ignore bad cache
+    }
+  }, []);
+
+  // Auth check (browser-only)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const token = localStorage.getItem('token');
 
-    // no token
     if (!token) {
       setCheckedAuth(true);
       return;
     }
 
-    // silently verify token
     fetch('https://api.lfgtool.xyz/v1/me', {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -41,39 +40,31 @@ export default function UserNavbarItem() {
       })
       .then((data) => {
         setUser(data.user);
-
-        // 🚀 refresh cached user
-        localStorage.setItem(
-          'user',
-          JSON.stringify(data.user)
-        );
-
+        localStorage.setItem('user', JSON.stringify(data.user));
         setCheckedAuth(true);
       })
       .catch(() => {
-        // 🚨 invalid token
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-
         setUser(null);
         setCheckedAuth(true);
       });
   }, []);
 
   const loginWithDiscord = () => {
+    if (typeof window === 'undefined') return;
     window.location.href = '/auth/discord';
   };
 
   const logout = () => {
+    if (typeof window === 'undefined') return;
+
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-
     setUser(null);
-
     window.location.reload();
   };
 
-  // 🚀 only show login AFTER auth check
   if (!user && !checkedAuth) {
     return (
       <div className={styles.userNavbar}>
@@ -85,46 +76,28 @@ export default function UserNavbarItem() {
     );
   }
 
-  // logged out
   if (!user) {
-    return (
-        <></>
-    //   <a className="navbar__item navbar__link" onClick={loginWithDiscord}>
-    //     Login with Discord
-    //   </a>
-    );
+    return <></>;
   }
 
   return (
     <div className={styles.userNavbar}>
-      <button
-        className={styles.userButton}
-        onClick={() => setOpen(!open)}
-      >
+      <button className={styles.userButton} onClick={() => setOpen(!open)}>
         <img
           src={`https://cdn.discordapp.com/avatars/${user.userid}/${user.avatar}.png?size=256`}
           alt="avatar"
           className={styles.userAvatar}
         />
-
-        <span className={styles.userName}>
-          {user.displayName}
-        </span>
+        <span className={styles.userName}>{user.displayName}</span>
       </button>
 
       {open && (
         <div className={styles.userDropdown}>
-          <a
-            href="/servers"
-            className={styles.userDropdownItem}
-          >
+          <a href="/servers" className={styles.userDropdownItem}>
             Manage Servers
           </a>
 
-          <button
-            onClick={logout}
-            className={styles.userDropdownItem}
-          >
+          <button onClick={logout} className={styles.userDropdownItem}>
             Logout
           </button>
         </div>
