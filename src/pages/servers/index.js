@@ -6,6 +6,14 @@ export default function ServersPage() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
+
+    const sortGuilds = (a, b) => {
+        if (a.isAdmin !== b.isAdmin) {
+            return a.isAdmin ? -1 : 1;
+        }
+        return a.name.localeCompare(b.name);
+    };
+
     useEffect(() => {
         const token = localStorage.getItem("token");
 
@@ -24,6 +32,8 @@ export default function ServersPage() {
                 return res.json();
             })
             .then((json) => {
+                json.managedGuilds = json.managedGuilds.sort(sortGuilds);
+                json.inviteGuilds = json.inviteGuilds.sort(sortGuilds);
                 setData(json);
                 setLoading(false);
             })
@@ -65,15 +75,19 @@ export default function ServersPage() {
             ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128`
             : `https://cdn.discordapp.com/embed/avatars/0.png?size=128`;
 
-        return (
-            <a href={(guild.botPresent ? `/server?id=${guild.id}` : "/add")} className={styles.guildCard}>
-                {icon ? (
-                    <img src={icon} alt={guild.name} className={styles.guildIcon} />
-                ) : (
-                    <div className={styles.guildPlaceholder} />
-                )}
+        const isDisabled = !guild.isAdmin; // or any condition you want
 
-                <div className="guildName">{guild.name}</div>
+        return (
+            <a
+                href={isDisabled ? undefined : `/server?id=${guild.id}`}
+                className={`${styles.guildCard} ${isDisabled ? styles.disabled : ""}`}
+                onClick={(e) => {
+                    if (isDisabled) e.preventDefault();
+                }}
+            >
+                <img src={icon} alt={guild.name} className={styles.guildIcon} />
+
+                <div className={styles.guildName}>{guild.name}</div>
             </a>
         );
     };
@@ -100,7 +114,7 @@ export default function ServersPage() {
 
                     {inviteGuilds.length > 0 && (
                         <div className={styles.section}>
-                            <h2>Add LFG Tool to!</h2>
+                            <h2>Servers without LFG Tool.</h2>
                             <div className={styles.grid}>
                                 {inviteGuilds.map((g) => (
                                     <ServerCard key={g.id} guild={g} />

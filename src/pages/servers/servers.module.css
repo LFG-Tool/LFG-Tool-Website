@@ -1,6 +1,6 @@
 .card {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   padding: 30px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -89,4 +89,11 @@
   opacity: 0.7;
   margin-top: 6px;
   margin-bottom: 0;
+}
+.disabled {
+  opacity: 0.45;
+  filter: grayscale(1);
+  pointer-events: none; /* blocks click */
+  user-select: none;     /* blocks highlight */
+  cursor: not-allowed;
 }
