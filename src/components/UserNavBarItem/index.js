@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
 export default function UserNavbarItem() {
+  // 🚀 instantly load cached user
   const [user, setUser] = useState(() => {
+    if(localStorage == null) return;
     const cached = localStorage.getItem('user');
 
     if (!cached) return null;
@@ -18,7 +20,7 @@ export default function UserNavbarItem() {
   const [checkedAuth, setCheckedAuth] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if(localStorage == null) return;
     const token = localStorage.getItem('token');
 
     // no token
@@ -40,6 +42,7 @@ export default function UserNavbarItem() {
       .then((data) => {
         setUser(data.user);
 
+        // 🚀 refresh cached user
         localStorage.setItem(
           'user',
           JSON.stringify(data.user)
@@ -48,6 +51,7 @@ export default function UserNavbarItem() {
         setCheckedAuth(true);
       })
       .catch(() => {
+        // 🚨 invalid token
         localStorage.removeItem('token');
         localStorage.removeItem('user');
 
@@ -84,7 +88,9 @@ export default function UserNavbarItem() {
   // logged out
   if (!user) {
     return (
-      <></>
+      <a className="navbar__item navbar__link" onClick={loginWithDiscord}>
+        Login with Discord
+      </a>
     );
   }
 
