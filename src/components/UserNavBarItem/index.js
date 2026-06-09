@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
 export default function UserNavbarItem() {
-  // 🚀 instantly load cached user
   const [user, setUser] = useState(() => {
     const cached = localStorage.getItem('user');
 
@@ -19,6 +18,7 @@ export default function UserNavbarItem() {
   const [checkedAuth, setCheckedAuth] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const token = localStorage.getItem('token');
 
     // no token
@@ -40,7 +40,6 @@ export default function UserNavbarItem() {
       .then((data) => {
         setUser(data.user);
 
-        // 🚀 refresh cached user
         localStorage.setItem(
           'user',
           JSON.stringify(data.user)
@@ -49,7 +48,6 @@ export default function UserNavbarItem() {
         setCheckedAuth(true);
       })
       .catch(() => {
-        // 🚨 invalid token
         localStorage.removeItem('token');
         localStorage.removeItem('user');
 
