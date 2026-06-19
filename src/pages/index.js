@@ -8,7 +8,6 @@ import AsUsedIn from '@site/src/components/AsUsedIn.js';
 import { ExternalLink } from 'lucide-react';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
 // Just set this to true when we want other people to use it freely.
 const Available = true;
 
@@ -58,8 +57,10 @@ function HomepageHeader() {
 
 
 export default function Home() {
+
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout description="LFG Tool">
+    <Layout description={siteConfig.tagline}>
       <HomepageHeader />
 
       <main style={{ position: 'relative', zIndex: 2 }}>
