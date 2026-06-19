@@ -61,6 +61,8 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout description={siteConfig.tagline}>
+        <meta property="og:image:width" content="150" />
+<meta property="og:image:height" content="150" />
       <HomepageHeader />
 
       <main style={{ position: 'relative', zIndex: 2 }}>
