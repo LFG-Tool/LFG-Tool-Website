@@ -10,8 +10,14 @@ const AGGRO_CRAB = {
     img: "/img/icons/aggro.webp",
     members: "14,000",
   }
+const REPO_MODDING = {
+    name: "R.E.P.O Modding",
+    url: "https://discord.gg/vPJtKhYAFe",
+    img: "/img/icons/repomod.webp",
+    members: "16,000",
+  }
 
-const Servers = [AGGRO_CRAB];
+const Servers = [AGGRO_CRAB, REPO_MODDING];
 
 export default function AsUsedIn({ gap = 16 }) {
   return (
